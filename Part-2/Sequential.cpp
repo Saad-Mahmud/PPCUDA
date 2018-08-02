@@ -16,7 +16,7 @@ int main(void)
 	//Allocate Memory (512*2=1GB). 
 	//Malloc allocates memory block and returns the pointer
 	float *X = new float[N];
-    float *Y = new float[N];
+        float *Y = new float[N];
 	printf("here");
 	// initialize x and y arrays on the host
 	for (int i = 0; i < N; i++) 
