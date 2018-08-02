@@ -45,4 +45,3 @@ int main(void)
   cudaFree(y); 
   return 0;
 }
-
