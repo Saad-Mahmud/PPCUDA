@@ -5,13 +5,13 @@ using namespace std;
 __global__
 void GPUmatmul(int N, double *x, double *y, double *ans)
 {
-    int t= (blockDim.x*blockDim.y)*threadIdx.z+(threadIdx.y*blockDim.x)+(threadIdx.x);
-    int b= (gridDim.x*gridDim.y)*blockIdx.z+(blockIdx.y*gridDim.x)+(blockIdx.x);
-    int T= blockDim.x*blockDim.y*blockDim.z;
-    int B= gridDim.x*gridDim.y*gridDim.z;
+	int t= (blockDim.x*blockDim.y)*threadIdx.z+(threadIdx.y*blockDim.x)+(threadIdx.x);
+    	int b= (gridDim.x*gridDim.y)*blockIdx.z+(blockIdx.y*gridDim.x)+(blockIdx.x);
+    	int T= blockDim.x*blockDim.y*blockDim.z;
+    	int B= gridDim.x*gridDim.y*gridDim.z;
     
-    for (int i=b;i<N;i+=B)
-    {
+    	for (int i=b;i<N;i+=B)
+    	{
 		for(int j=t;j<N;j+=T)
 		{
 			for(int k=0;k<N;k++)
